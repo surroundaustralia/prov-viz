@@ -1,5 +1,51 @@
---- 
-layout: default
-title: Home
----
-<h1>{{ "Hello World!" | downcase }}</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Load d3.js -->
+    <script src="js/d3.v4.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+</head>
+
+<body>
+    <!-- button for selecting graph type-->
+    <div class="tab">
+        <!-- buttons for switching, handlers are added in the diagramKeyDiv.js -->
+        <button class="tablinks" id="buttonSankey" onclick="sankeyButton()">Sankey Diagram</button>
+        <button type="button" id="buttonStar" onclick="starButton()">Star Diagram</button>
+    </div>
+
+
+    <!-- Load the sankey.js function -->
+    <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/sankey.js"></script>
+    <!-- <script src="js/d3-sankey.js"></script> -->
+    <!-- Create a div where the graph will take place -->
+
+    <!-- Trigger/Open The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div id="modalContent" class="modal-content">
+            <script src="modal.js"></script>
+        </div>
+
+    </div>
+
+    <script src="clickThroughProperties.js"></script>
+    <div id="starDiv" , class>
+        <script src="scratch_star.js"></script>
+    </div>
+    <div id="sankeyDiv">
+        <script src="scratch.js"></script>
+    </div>
+    <div id="diagramKeyDiv">
+        <svg id="diagramKeySVG"></svg>
+        <script src="diagramKeyDiv.js"></script>
+    </div>
+
+</body>
+
+</html>

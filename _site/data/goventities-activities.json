@@ -1,0 +1,12 @@
+{
+"nodes": [
+  {"node":0, "name": "DEHCD", "title":"Department of Environment, Housing & Community Development",  "prov_class": "Entity"},
+  {"node":1, "name": "DST", "title":"Science & Technology", "prov_class": "Entity"},
+  {"node":2, "name": "Act 1", "title":"Combine Env w Sci & Tech into Sci & Env", "prov_class": "Activity"},
+  {"node":3, "name": "DSE", "title":"Science & the Environment", "prov_class": "Entity"}
+],
+"links": [
+  {"source":0, "target":2, "value":"1"},
+  {"source":1, "target":2, "value":"1"},
+  {"source":2, "target":3, "value":"2"}
+] }

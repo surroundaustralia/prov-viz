@@ -1,0 +1,129 @@
+# baseURI: http://www.co-ode.org/ontologies/pizza/pizza_prov_out/
+
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sop: <http://surroundaustralia.com/ns/platform/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.co-ode.org/ontologies/pizza/pizza_prov_out/>
+  rdf:type owl:Ontology ;
+  owl:imports sop: ;
+.
+
+<http://surroundaustralia.com/sop/rules/owl2skos>
+  rdf:type sop:SPINruleset ;
+  rdf:type prov:Entity ;
+  rdfs:label "SKOS entail from OWL"@en ;
+.
+<http://surroundaustralia.com/sop/rules/skosentail>
+  rdf:type sop:SPINruleset ;
+  rdf:type prov:Entity ;
+  rdfs:label "Basic SKOS entailments "^^rdf:langString ;
+.
+<http://surroundaustralia.com/sop/rules/skosprov>
+  rdf:type prov:Entity ;
+  rdfs:label "PROV entailment rules for SKOS entailment process" ;
+.
+<http://www.co-ode.org/ontologies/pizza>
+  rdf:type prov:Entity ;
+  rdfs:label "Pizza.OWL " ;
+.
+<http://www.co-ode.org/ontologies/pizza?_view=inferred>
+  rdf:type prov:Entity ;
+  rdfs:label "pizza.OWL SKOS inferences" ;
+  prov:wasDerivedFrom <http://www.co-ode.org/ontologies/pizza?_view=skos> ;
+  prov:wasGeneratedBy <http://www.co-ode.org/ontologies/pizza_skos_1> ;
+.
+<http://www.co-ode.org/ontologies/pizza?_view=skos>
+  rdf:type prov:Entity ;
+  sop:iteration 1 ;
+  rdfs:label "SKOS view of OWL" ;
+  rdfs:label "pizza" ;
+  prov:wasDerivedFrom <http://www.co-ode.org/ontologies/pizza> ;
+  prov:wasGeneratedBy <http://www.co-ode.org/ontologies/pizza_owl2skos_1> ;
+.
+<http://www.co-ode.org/ontologies/pizza_owl2skos_1>
+  rdf:type sop:Transformation ;
+  rdf:type prov:Activity ;
+  rdfs:label "OWL2SKOS" ;
+  prov:startedAtTime "2018-02-28T10:41:57.452+11:00"^^xsd:dateTime ;
+  prov:startedAtTime "2018-02-28T10:41:57.455+11:00"^^xsd:dateTime ;
+  prov:startedAtTime "2018-02-28T10:41:57.722+11:00"^^xsd:dateTime ;
+  prov:startedAtTime "2018-02-28T10:41:58.209+11:00"^^xsd:dateTime ;
+  prov:startedAtTime "2018-02-28T10:42:11.065+11:00"^^xsd:dateTime ;
+  prov:startedAtTime "2018-02-28T10:42:11.478+11:00"^^xsd:dateTime ;
+  prov:startedAtTime "2018-02-28T10:42:12.013+11:00"^^xsd:dateTime ;
+  prov:startedAtTime "2018-02-28T10:42:12.339+11:00"^^xsd:dateTime ;
+  prov:startedAtTime "2018-02-28T10:42:12.592+11:00"^^xsd:dateTime ;
+  prov:startedAtTime "2018-02-28T10:42:13.173+11:00"^^xsd:dateTime ;
+  prov:startedAtTime "2018-02-28T10:42:13.459+11:00"^^xsd:dateTime ;
+  prov:startedAtTime "2018-02-28T10:42:14.560+11:00"^^xsd:dateTime ;
+  prov:startedAtTime "2018-02-28T10:42:14.853+11:00"^^xsd:dateTime ;
+  prov:startedAtTime "2018-02-28T10:42:15.318+11:00"^^xsd:dateTime ;
+  prov:used <http://surroundaustralia.com/sop/rules/owl2skos> ;
+  prov:used <http://www.co-ode.org/ontologies/pizza> ;
+.
+<http://www.co-ode.org/ontologies/pizza_prov>
+  rdf:type prov:Entity ;
+  sop:iteration 1 ;
+  rdfs:label "Provenance Graph for inferencing from Pizza.owl" ;
+  owl:imports sop: ;
+  owl:imports <http://www.co-ode.org/ontologies/pizza?_view=skos> ;
+  owl:imports prov: ;
+  prov:wasDerivedFrom <http://www.co-ode.org/ontologies/pizza?_view=skos> ;
+  prov:wasGeneratedBy <http://www.co-ode.org/ontologies/pizza_prov_1> ;
+.
+<http://www.co-ode.org/ontologies/pizza_prov_1>
+  rdf:type sop:Deduction ;
+  rdf:type prov:Activity ;
+  sop:iteration 1 ;
+  rdfs:label "Generate PROV graph" ;
+  prov:startedAtTime "2018/2/28:10:41" ;
+  prov:startedAtTime "2018/2/28:10:42" ;
+  prov:used <http://surroundaustralia.com/sop/rules/skosprov> ;
+  prov:wasInformedBy <http://www.co-ode.org/ontologies/pizza_skos_1> ;
+.
+<http://www.co-ode.org/ontologies/pizza_skos_1>
+  rdf:type sop:Deduction ;
+  rdf:type prov:Activity ;
+  rdfs:label "SKOS entailment" ;
+  prov:startedAtTime "2018-02-28T10:41:57.691+11:00"^^xsd:dateTime ;
+  prov:startedAtTime "2018-02-28T10:42:11.002+11:00"^^xsd:dateTime ;
+  prov:startedAtTime "2018-02-28T10:42:11.035+11:00"^^xsd:dateTime ;
+  prov:startedAtTime "2018-02-28T10:42:12.330+11:00"^^xsd:dateTime ;
+  prov:startedAtTime "2018-02-28T10:42:13.168+11:00"^^xsd:dateTime ;
+  prov:startedAtTime "2018-02-28T10:42:14.517+11:00"^^xsd:dateTime ;
+  prov:startedAtTime "2018-02-28T10:42:14.547+11:00"^^xsd:dateTime ;
+  prov:used <http://surroundaustralia.com/sop/rules/skosentail> ;
+  prov:used <http://www.co-ode.org/ontologies/pizza?_view=skos> ;
+.
+prov:Activity
+  rdfs:subClassOf owl:Thing ;
+.
+prov:Agent
+  rdfs:subClassOf owl:Thing ;
+.
+prov:Dictionary
+  rdfs:subClassOf owl:Thing ;
+.
+prov:Entity
+  rdf:type prov:Dictionary ;
+  rdfs:subClassOf owl:Thing ;
+.
+prov:Influence
+  rdfs:subClassOf owl:Thing ;
+.
+prov:InstantaneousEvent
+  rdfs:subClassOf owl:Thing ;
+.
+prov:KeyEntityPair
+  rdfs:subClassOf owl:Thing ;
+.
+prov:Location
+  rdfs:subClassOf owl:Thing ;
+.
+prov:Role
+  rdfs:subClassOf owl:Thing ;
+.

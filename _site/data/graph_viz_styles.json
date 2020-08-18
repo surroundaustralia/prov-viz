@@ -1,0 +1,15 @@
+{
+    "Display_types_nodes": [
+        { "name": "Entity", "css_style": "Entity", "node_color": "#fffe8f" },
+        { "name": "Agent", "css_style": "Agent", "node_color": "#f7a04a" },
+        { "name": "Activity", "css_style": "Activity", "node_color": "#CFCEFF" }
+
+    ],
+    "Display_types_links": [{
+        "name": "Derived From",
+        "css_style": "Derived_From",
+        "link_color": "#c4c4c4"
+    }]
+
+
+}

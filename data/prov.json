@@ -1,0 +1,24 @@
+{
+    "nodes": [
+        { "name": "SKOS entail from OWL", "node_types": "Agent" },
+        { "name": "OWL2SKOS", "node_types": "Entity" },
+        { "name": "SKOS view of OWL", "node_types": "Entity" },
+        { "name": "SKOS entailment", "node_types": "Entity" },
+        { "name": "Generate PROV graph", "node_types": "Entity" },
+        { "name": "SKOS inferences", "node_types": "Entity" },
+        { "name": "PROV", "node_types": "Entity" },
+        { "name": "pizza", "node_types": "Entity" }
+    ],
+    "links": [
+        { "source": "pizza", "target": "OWL2SKOS", "value": "1" },
+        { "source": "SKOS entail from OWL", "target": "OWL2SKOS", "value": "1" },
+        { "source": "OWL2SKOS", "target": "SKOS view of OWL", "value": "1.4" },
+        { "source": "SKOS view of OWL", "target": "SKOS entailment", "value": "1" },
+        { "source": "SKOS view of OWL", "target": "PROV", "value": "1" },
+        { "source": "SKOS view of OWL", "target": "SKOS inferences", "value": "1" },
+        { "source": "SKOS view of OWL", "target": "SKOS entailment", "value": "1" },
+        { "source": "SKOS entailment", "target": "Generate PROV graph", "value": "1" },
+        { "source": "Generate PROV graph", "target": "PROV", "value": "1" }
+    ]
+
+}

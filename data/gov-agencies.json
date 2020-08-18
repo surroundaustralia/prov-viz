@@ -1,0 +1,41 @@
+{
+    "nodes": [
+        { "ID": "CA9430", "Name": "Agriculture II", "prov_class": "Entity", "uri": "https://data.surroundaustralia.com/dataset/flipcharts/governmententity/0005", "Function": "AGRICULTURE, EXPORTS AND IMPORTS, FISHERIES REGULATION, FORESTRY REGULATION, HORTICULTURE, INSPECTION SERVICES, PASTORAL, PRIMARY INDUSTRIES, QUARANTINE, RESOURCES, VITICULTURE" },
+        { "ID": "CA9438", "Name": "Environment III", "prov_class": "Entity", "uri": "https://data.surroundaustralia.com/dataset/flipcharts/governmententity/0160", "Function": "CONSERVATION, CULTURAL AFFAIRS, ENERGY, ENVIRONMENT, ENVIRONMENTAL MONITORING, LAND USE, METEOROLOGY, NATIONAL HERITAGE, NATIONAL PARKS, SCIENTIFIC RESEARCH, TERRITORY ADMINISTRATION, WATER RESOURCES" },
+        { "ID": "CA9551", "Name": "Agriculture and Water Resources", "prov_class": "Activity", "uri": "https://data.surroundaustralia.com/dataset/flipcharts/governmententity/0016", "Function": "AGRICULTURE, EXPORTS AND IMPORTS, FISHERIES REGULATION, FORESTRY REGULATION, HORTICULTURE, INSPECTION SERVICES, PASTORAL, PRIMARY INDUSTRIES, QUARANTINE, RESOURCES, VITICULTURE, WATER RESOURCES" },
+        { "ID": "CA9568", "Name": "Environment and Energy", "prov_class": "Entity", "uri": "https://data.surroundaustralia.com/dataset/flipcharts/governmententity/0172", "Function": "CONSERVATION, CULTURAL AFFAIRS, ENERGY, ENVIRONMENT, ENVIRONMENTAL MONITORING, LAND USE, METEOROLOGY, NATIONAL HERITAGE, NATIONAL PARKS, SCIENTIFIC RESEARCH, TERRITORY ADMINISTRATION, WATER RESOURCES" },
+        { "ID": "CA9614", "Name": "Agriculture III", "prov_class": "Entity", "uri": "https://data.surroundaustralia.com/dataset/flipcharts/governmententity/0005b", "Function": "AGRICULTURE, EXPORTS AND IMPORTS, FISHERIES REGULATION, HORTICULTURE, INSPECTION SERVICES, PASTORAL, PRIMARY INDUSTRIES, RESOURCES, VITICULTURE, WATER RESOURCES" },
+        { "ID": "CA9615", "Name": "Agriculture, Water and the Environment", "prov_class": "Entity", "uri": "https://data.surroundaustralia.com/dataset/flipcharts/governmententity/0027", "Function": "AGRICULTURE, CONSERVATION, CULTURAL AFFAIRS, ENVIRONMENT, ENVIRONMENTAL MONITORING, EXPORTS AND IMPORTS, FISHERIES REGULATION, FORESTRY REGULATION, HORTICULTURE, INSPECTION SERVICES, LAND USE, METEOROLOGY, NATIONAL HERITAGE, NATIONAL PARKS, PASTORALM PRIMARY INDUSTRIES, RESOURCES, SCIENTIFIC RESEARCH, TERRITORY ADMINISTRATION, VITICULTURE, WATER RESOURCES" },
+        { "ID": "CA9617", "Name": "Industry", "prov_class": "Entity", "uri": "https://data.surroundaustralia.com/dataset/flipcharts/governmententity/0278", "Function": "ENERGY, INDUSTRIES, SCIENCE, SCIENTIFIC RESEARCH" },
+        { "ID": "CA9432", "Name": "Education III", "prov_class": "Entity", "uri": "https://data.surroundaustralia.com/dataset/flipcharts/governmententity/0123", "Function": "CHILD WELFARE, CURRICULUM DEVELOPMENT, EDUCATION, GRANTS ADMINISTRATION, RESEARCH, TRAINING" },
+        { "ID": "CA9433", "Name": "Employment", "prov_class": "Entity", "uri": "https://data.surroundaustralia.com/dataset/flipcharts/governmententity/0144", "Function": "ARBITRATION, EMPLOYMENT, EQUITY PROGRAMS, INDUSTRIAL RELATIONS, LABOUR MARKET PROGRAMS, OCCUPATIONAL HEALTH AND SAFETY" },
+        { "ID": "CA9437", "Name": "Industry II", "prov_class": "Entity", "uri": "https://data.surroundaustralia.com/dataset/flipcharts/governmententity/0240", "Function": "CONSTRUCTION, EDUCATION, ENERGY, HYDROELECTRIC POWER, INUDSTRIES, MARKETING, MINING, RESEARCH AND DEVELOPMENT, RESOURCES, SCIENCE" },
+        { "ID": "CA9514", "Name": "Education and Training", "prov_class": "Entity", "uri": "https://data.surroundaustralia.com/dataset/flipcharts/governmententity/0131", "Function": "CURRICULUM DEVELOPMENT, EDUCATION, GRANTS ADMINISTRATION, RESEARCH, TRADE SKILLS ASSESSMENT, TRAINING" },
+        { "ID": "CA9515", "Name": "Industry and Science", "prov_class": "Entity", "uri": "https://data.surroundaustralia.com/dataset/flipcharts/governmententity/0249", "Function": "CONSTRUCTION, ENERGY, HYDROELECTRIC POWER, INDUSTRIES, MARKETING, MINING, RESEARCH AND DEVELOPMENT, RESOURCES, SCIENCE, WEIGHTS AND MEASURES" },
+        { "ID": "CA9553", "Name": "Industry, Innovation and Science", "prov_class": "Entity", "uri": "https://data.surroundaustralia.com/dataset/flipcharts/governmententity/0257", "Function": "INDUSTRIES, SCIENCE, SCIENTIFIC RESEARCH" },
+        { "ID": "CA9578", "Name": "Jobs and Small Business", "prov_class": "Entity", "uri": "https://data.surroundaustralia.com/dataset/flipcharts/governmententity/0355", "Function": "ARBITRATION, EMPLOYMENT, EQUITY PROGRAMS, INDUSTRIAL RELATIONS, LABOUR MARKET PROGRAMS, OCCUPATIONAL HEALTH AND SAFETY" },
+        { "ID": "CA9609", "Name": "Education IV", "prov_class": "Entity", "uri": "https://data.surroundaustralia.com/dataset/flipcharts/governmententity/0123b", "Function": "CURRICULUM DEVELOPMENT, EDUCATION, GRANTS ADMINISTRATION, RESEARCH, TRADE SKILLS ASSESSMENT, TRAINING" },
+        { "ID": "CA9611", "Name": "Employment, Skills, Small and Family Business", "prov_class": "Entity", "uri": "https://data.surroundaustralia.com/dataset/flipcharts/governmententity/0154", "Function": "ARBITRATION, EMPLOYMENT, EQUITY PROGRAMS, INDUSTRIAL RELATIONS, LABOUR MARKET PROGRAMS, OCCUPATIONAL HEALTH AND SAFETY" },
+        { "ID": "CA9616", "Name": "Education, Skills and Employment", "prov_class": "Entity", "uri": "https://data.surroundaustralia.com/dataset/flipcharts/governmententity/0138", "Function": "ARBITRATION, CURRICULUM DEVELOPMENT, EDUCATION, EMPLOYMENT, EQUITY PROGRAMS, GRANTS ADMINISTRATION, INDUSTRIAL RELATIONS, LABOUR MARKET PROGRAMS, OCCUPATIONAL HEALTH AND SAFETY, RESEARCH, TRADE SKILLS ASSESSMENT, TRAINING" }
+    ],
+    "links": [
+        { "source": "CA9430", "target": "CA9551", "value": "1", "link_class": "derived from" },
+        { "source": "CA9438", "target": "CA9551", "value": "1", "link_class": "derived from" },
+        { "source": "CA9438", "target": "CA9568", "value": "1", "link_class": "derived from" },
+        { "source": "CA9551", "target": "CA9614", "value": "1", "link_class": "derived from" },
+        { "source": "CA9568", "target": "CA9615", "value": "1", "link_class": "derived from" },
+        { "source": "CA9568", "target": "CA9617", "value": "1", "link_class": "derived from" },
+        { "source": "CA9614", "target": "CA9615", "value": "1", "link_class": "derived from" },
+        { "source": "CA9432", "target": "CA9514", "value": "1", "link_class": "derived from" },
+        { "source": "CA9433", "target": "CA9578", "value": "1", "link_class": "derived from" },
+        { "source": "CA9437", "target": "CA9514", "value": "1", "link_class": "derived from" },
+        { "source": "CA9437", "target": "CA9515", "value": "1", "link_class": "derived from" },
+        { "source": "CA9514", "target": "CA9609", "value": "1", "link_class": "derived from" },
+        { "source": "CA9515", "target": "CA9553", "value": "1", "link_class": "derived from" },
+        { "source": "CA9553", "target": "CA9617", "value": "1", "link_class": "derived from" },
+        { "source": "CA9578", "target": "CA9611", "value": "1", "link_class": "derived from" },
+        { "source": "CA9609", "target": "CA9616", "value": "1", "link_class": "derived from" },
+        { "source": "CA9611", "target": "CA9616", "value": "1", "link_class": "derived from" },
+        { "source": "CA9611", "target": "CA9617", "value": "1", "link_class": "derived from" }
+    ]
+}

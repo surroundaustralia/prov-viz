@@ -1,0 +1,36 @@
+,
+    {"node":7,"name":"Department of the Prime Minister and Cabinet"}
+
+
+
+{
+  "nodes":[
+    {"node":0,"name":"Department of Environment, Housing and Community Development"},
+    {"node":1,"name":"Department of Science"},
+    {"node":2,"name":"Department of Productivity"},
+    {"node":3,"name":"Department of Science and the Environment"},
+    {"node":4,"name":"Department of Home Affairs and Environment"},
+    {"node":5,"name":"Department of Science and Technology"},
+    {"node":6,"name":"Department of Industry, Technology and Commerce"}
+  ],
+  "links":[
+    {"source":0,"target":3,"value":"1"},
+    {"source":1,"target":3,"value":"1"},
+    {"source":3,"target":4,"value":"1"},
+    {"source":2,"target":4,"value":"1"},
+    {"source":3,"target":5,"value":"1"},
+    {"source":2,"target":5,"value":"1"},
+    {"source":5,"target":6,"value":"1"}
+  ]
+}
+
+
+    {"node":4,"name":"Department of Home Affairs and Environment"},
+
+
+{"node":0,"name":"Environment, Housing & Community Development"},
+  {"node":1,"name":"Science"},
+  {"node":2,"name":"Science & the Environment"},
+  {"node":3,"name":"Home Affairs and Environment"},
+  {"node":4,"name":"Science and Technology"},
+  {"node":5,"name":"Industry, Technology and Commerce"}

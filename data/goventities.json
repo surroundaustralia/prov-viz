@@ -1,0 +1,20 @@
+{
+"nodes": [
+{"node":0,"name":"Environment, Housing & Community Development"},
+{"node":1,"name":"Science & Technology"},
+{"node":2,"name":"Science & the Environment"},
+{"node":3,"name":"Home Affairs & Environment"},
+{"node":4,"name":"Science"},
+{"node":5,"name":"Industry, Technology & Commerce"},
+{"node":6,"name":"PM&C"},
+{"node":7,"name":"Productivity"}
+],
+"links": [
+{"source":7,"target":1, "value":"1"},
+{"source":0,"target":1, "value":"1"},
+{"source":1,"target":2, "value":"1.4"},
+{"source":2,"target":3, "value":"1"},
+{"source":2,"target":5, "value":"1"},
+{"source":3,"target":4, "value":"1"},
+{"source":4,"target":6, "value":"1"}
+] }

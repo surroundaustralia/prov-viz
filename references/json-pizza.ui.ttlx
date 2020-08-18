@@ -1,0 +1,301 @@
+# baseURI: http://example.org/json-pizza
+# imports: http://surroundaustralia/examples/prov-viz
+# imports: http://surroundaustralia.com/ns/platform/
+# imports: http://uispin.org/swon
+# imports: http://www.co-ode.org/ontologies/pizza/pizza_prov_out/
+# imports: http://www.w3.org/ns/prov-o
+# prefix: json-pizza
+
+@prefix adminguide: <http://server.topbraidlive.org/doc/adminguide#> .
+@prefix afn: <http://jena.hpl.hp.com/ARQ/function#> .
+@prefix arg: <http://spinrdf.org/arg#> .
+@prefix cfg: <http://server.topbraidlive.org/web/2009/config#> .
+@prefix charts: <http://uispin.org/charts#> .
+@prefix composite: <http://www.topbraid.org/2007/05/composite.owl#> .
+@prefix css: <http://uispin.org/css#> .
+@prefix daml: <http://www.daml.org/2001/03/daml+oil#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix default: <http://uispin.org/default#> .
+@prefix email: <http://topbraid.org/email#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix graphql: <http://datashapes.org/graphql#> .
+@prefix html: <http://uispin.org/html#> .
+@prefix imported: <http://topbraid.org/imported#> .
+@prefix json: <http://topbraid.org/json#> .
+@prefix json-pizza: <http://example.org/json-pizza#> .
+@prefix let: <http://uispin.org/let#> .
+@prefix letrs: <http://uispin.org/letrs#> .
+@prefix list: <http://jena.hpl.hp.com/ARQ/list#> .
+@prefix metadata: <http://topbraid.org/metadata#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix pv: <http://surroundaustralia/examples/prov-viz#> .
+@prefix raci: <http://topbraid.org/raci#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix search: <http://topbraid.org/search#> .
+@prefix search.spin: <http://topbraid.org/search.spin#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix sioc: <http://rdfs.org/sioc/ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosapp: <http://evn.topbraidlive.org/uiplugins#> .
+@prefix skostemplate: <http://topbraid.org/spin/skostemplates#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix sm: <http://topbraid.org/sparqlmotion#> .
+@prefix smf: <http://topbraid.org/sparqlmotionfunctions#> .
+@prefix sml: <http://topbraid.org/sparqlmotionlib#> .
+@prefix solr: <http://topbraid.org/solr#> .
+@prefix sop: <http://surroundaustralia.com/ns/platform/> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix sparqlmotionlib-swp: <http://topbraid.org/sparqlmotionlib-swp#> .
+@prefix sparqlmotionlib-tbc: <http://topbraid.org/sparqlmotionlib-tbc#> .
+@prefix spell: <http://topbraid.org/spellcheckresults#> .
+@prefix spif: <http://spinrdf.org/spif#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix spl: <http://spinrdf.org/spl#> .
+@prefix spl-dynamic-ranges: <http://spinrdf.org/spl-dynamic-ranges#> .
+@prefix spr: <http://spinrdf.org/spr#> .
+@prefix spra: <http://spinrdf.org/spra#> .
+@prefix style: <http://uispin.org/style#> .
+@prefix svg: <http://uispin.org/svg#> .
+@prefix swa: <http://topbraid.org/swa#> .
+@prefix swaclasses: <http://topbraid.org/swaclasses#> .
+@prefix swaeditor: <http://topbraid.org/swaeditor#> .
+@prefix swaowl: <http://topbraid.org/swaowl#> .
+@prefix swashacl: <http://topbraid.org/swashacl#> .
+@prefix swauml: <http://topbraid.org/swauml#> .
+@prefix swon: <http://uispin.org/swon#> .
+@prefix sxml: <http://topbraid.org/sxml#> .
+@prefix tables: <http://topbraid.org/tables#> .
+@prefix task: <http://topbraid.org/task#> .
+@prefix tasks: <http://topbraid.org/tasks#> .
+@prefix tbl: <http://topbraidlive.org/functions#> .
+@prefix teamwork: <http://topbraid.org/teamwork#> .
+@prefix tops: <http://www.topbraid.org/tops#> .
+@prefix tosh: <http://topbraid.org/tosh#> .
+@prefix tosh.ui: <http://topbraid.org/tosh.ui#> .
+@prefix ui: <http://uispin.org/ui#> .
+@prefix uix: <http://topbraidlive.org/uix#> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix wot: <http://xmlns.com/wot/0.1/> .
+@prefix xlink: <http://www.w3.org/1999/xlink#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/json-pizza>
+  rdf:type owl:Ontology ;
+  owl:imports sop: ;
+  owl:imports <http://surroundaustralia/examples/prov-viz> ;
+  owl:imports <http://uispin.org/swon> ;
+  owl:imports <http://www.co-ode.org/ontologies/pizza/pizza_prov_out/> ;
+  owl:imports <http://www.w3.org/ns/prov-o> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+json-pizza:devJS
+  rdf:type ui:Service ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate arg:prov ;
+      spl:valueType prov:Entity ;
+    ] ;
+  ui:prototype """
+<ui:group>
+    <p id=\"chart\"/>
+    <script src=\"http://d3js.org/d3.v3.js\"/>
+    <script src=\"sankey.js\"/>
+    <script>function getJSONP(url, success) {
+
+var ud = '_' + +new Date,
+    script = document.createElement('script'),
+    head = document.getElementsByTagName('head')[0] 
+           || document.documentElement;
+
+window[ud] = function(data) {
+    head.removeChild(script);
+    success &amp;&amp; success(data);
+};
+
+script.src = url.replace('callback=?', 'callback=' + ud);
+head.appendChild(script);
+
+}
+
+getJSONP('http://localhost:8083/tbl/swp?_viewCalass=json-prov:getProvGraph&amp;fileName=X', function(data){
+console.log(data);
+});  
+
+var units = \"Widgets\";
+ 
+var margin = {top: 10, right: 10, bottom: 10, left: 10},
+width = 1200 - margin.left - margin.right,
+height = 740 - margin.top - margin.bottom;
+ 
+var formatNumber = d3.format(\",.0f\"),    // zero decimal places
+format = function(d) { return formatNumber(d) + \" \" + units; },
+color = d3.scale.category20();
+ 
+// append the svg canvas to the page
+var svg = d3.select(\"#chart\").append(\"svg\")
+.attr(\"width\", width + margin.left + margin.right)
+.attr(\"height\", height + margin.top + margin.bottom)
+  .append(\"g\")
+.attr(\"transform\", 
+      \"translate(\" + margin.left + \",\" + margin.top + \")\");
+ 
+// Set the sankey diagram properties
+var sankey = d3.sankey()
+.nodeWidth(36)
+.nodePadding(10)
+.size([width, height]);
+ 
+var path = sankey.link();
+ 
+// load the data
+
+d3.json(data, function(error, graph) {
+ 
+var nodeMap = {};
+graph.nodes.forEach(function(x) { nodeMap[x.name] = x; });
+graph.links = graph.links.map(function(x) {
+  return {
+    source: nodeMap[x.source],
+    target: nodeMap[x.target],
+    value: x.value
+  };
+});
+ 
+  sankey
+  .nodes(graph.nodes)
+  .links(graph.links)
+  .layout(32);
+ 
+// add in the links
+  var link = svg.append(\"g\").selectAll(\".link\")
+  .data(graph.links)
+.enter().append(\"path\")
+  .attr(\"class\", \"link\")
+  .attr(\"d\", path)
+  .style(\"stroke-width\", function(d) { return Math.max(1, d.dy); })
+  .sort(function(a, b) { return b.dy - a.dy; });
+ 
+// add the link titles
+  link.append(\"title\")
+    .text(function(d) {
+  	return d.source.name + \" &rarr; \" + 
+            d.target.name + \"\\n\" + format(d.value); });
+ 
+// add in the nodes
+  var node = svg.append(\"g\").selectAll(\".node\")
+  .data(graph.nodes)
+.enter().append(\"g\")
+  .attr(\"class\", \"node\")
+  .attr(\"transform\", function(d) { 
+		  return \"translate(\" + d.x + \",\" + d.y + \")\"; })
+.call(d3.behavior.drag()
+  .origin(function(d) { return d; })
+  .on(\"dragstart\", function() { 
+		  this.parentNode.appendChild(this); })
+  .on(\"drag\", dragmove));
+ 
+// add the rectangles for the nodes
+  node.append(\"rect\")
+  .attr(\"height\", function(d) { return d.dy; })
+  .attr(\"width\", sankey.nodeWidth())
+  .style(\"fill\", function(d) { 
+		  return d.color = color(d.name.replace(/ .*/, \"\")); })
+  .style(\"stroke\", function(d) { 
+		  return d3.rgb(d.color).darker(2); })
+.append(\"title\")
+  .text(function(d) { 
+		  return d.name + \"\\n\" + format(d.value); });
+ 
+// add in the title for the nodes
+  node.append(\"text\")
+  .attr(\"x\", -6)
+  .attr(\"y\", function(d) { return d.dy / 2; })
+  .attr(\"dy\", \".35em\")
+  .attr(\"text-anchor\", \"end\")
+  .attr(\"transform\", null)
+  .text(function(d) { return d.name; })
+.filter(function(d) { return d.x &lt; width / 2; })
+  .attr(\"x\", 6 + sankey.nodeWidth())
+  .attr(\"text-anchor\", \"start\");
+ 
+// the function for moving the nodes
+  function dragmove(d) {
+d3.select(this).attr(\"transform\", 
+    \"translate(\" + (
+    	   d.x = Math.max(0, Math.min(width - d.dx, d3.event.x))
+    	) + \",\" + (
+               d.y = Math.max(0, Math.min(height - d.dy, d3.event.y))
+        ) + \")\");
+sankey.relayout();
+link.attr(\"d\", path);
+  }
+});</script>
+</ui:group>
+"""^^ui:Literal ;
+  rdfs:subClassOf ui:JSONServices ;
+.
+json-pizza:getProvGraph
+  rdf:type ui:Service ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate arg:graph ;
+      spl:valueType prov:Entity ;
+      rdfs:comment "The provenance graph" ;
+    ] ;
+  ui:prototype """
+<ui:setContext ui:queryGraph=\"{= ui:graphWithImports(&lt;http://www.co-ode.org/ontologies/pizza/pizza_prov_out/&gt;) }\">
+    <swon:Object>
+        <swon:Value arg:name=\"links\">
+            <swon:Array>
+                <ui:forEach ui:resultSet=\"{#
+                        SELECT ?l ?e2
+                        WHERE {
+                            ?ent a prov:Entity .
+                            ?ent rdfs:label ?l .
+                            ?ent prov:wasGeneratedBy/rdfs:label ?e2 .
+                            ?ent prov:wasDerivedFrom/rdfs:label ?e3 .
+                        }
+                        ORDER BY (?l) }\">
+                    <swon:Object>
+                        <swon:Value arg:name=\"source\" arg:value=\"{= ?e2 }\"/>
+                        <swon:Value arg:name=\"target\" arg:value=\"{= ?l }\"/>
+                        <swon:Value arg:name=\"value\" arg:value=\"1\"/>
+                    </swon:Object>
+                </ui:forEach>
+            </swon:Array>
+        </swon:Value>
+        <swon:Value arg:name=\"nodes\">
+            <swon:Array>
+                <ui:forEach ui:resultSet=\"{#
+                        SELECT ?l ?e2 ?e3
+                        WHERE {
+                            ?ent a prov:Entity .
+                            ?ent rdfs:label ?l .
+                            ?ent prov:wasGeneratedBy/rdfs:label ?e2 .
+                            ?ent prov:wasDerivedFrom/rdfs:label ?e3 .
+                        }
+                        ORDER BY (?l) }\">
+                    <swon:Object>
+                        <swon:Value arg:name=\"name\" arg:value=\"{= ?e2 }\"/>
+                    </swon:Object>
+                </ui:forEach>
+            </swon:Array>
+        </swon:Value>
+    </swon:Object>
+</ui:setContext>
+"""^^ui:Literal ;
+  ui:responseType ui:JSON ;
+  rdfs:subClassOf ui:JSONServices ;
+.
+sml:ApplyOWLIM
+  rdf:type ui:Service ;
+  rdfs:subClassOf sml:Elements ;
+.
