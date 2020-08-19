@@ -49,8 +49,17 @@ var simulation = d3.forceSimulation()
     .force("charge", d3.forceManyBody().strength(-200))
     .force("center", d3.forceCenter(width / 2, height / 2));
 
-d3.json("data/gov-agencies.json", function(error, graph) {
-    if (error) throw error;
+    var responseFromServer;
+    // set ajax to run synchronously to ensure data is ready
+    $.ajaxSetup({
+        async: false
+    });
+    $.getJSON("https://data.surroundaustralia.com/gov-agencies.json", function(json){
+        responseFromServer = json
+    })
+createForce(responseFromServer)
+function createForce(responseFromServer){
+    graph = responseFromServer
     var link = svgStar.append("g")
         .attr("class", "links")
         .selectAll("line")
@@ -106,7 +115,7 @@ d3.json("data/gov-agencies.json", function(error, graph) {
                 return "translate(" + d.x + "," + d.y + ")";
             })
     }
-});
+};
 
 function dragstarted(d) {
     if (!d3.event.active) simulation.alphaTarget(0.3).restart();

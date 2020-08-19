@@ -3,7 +3,6 @@ linkHighlightedOpacity = 0.6;
 linkNormalOpacity = 0.2;
 
 
-
 // set the dimensions and margins of the graph
 var margin = { top: 10, right: 10, bottom: 10, left: 10 },
     width = 1400 - margin.left - margin.right,
@@ -57,11 +56,23 @@ var sankey = d3.sankey()
 // variable used for determining the currently clicked node
 var currentNode = undefined;
 
+var responseFromServer;
+// set ajax to run synchronously to ensure data is ready
+$.ajaxSetup({
+    async: false
+});
+$.getJSON("https://data.surroundaustralia.com/gov-agencies.json", function(json){
+    responseFromServer = json
+})
+// console.log(responseFromServer.readyState)
 // load the data
-d3.json("data/gov-agencies.json", function(error, graph) {
+// d3.json("data/gov-agencies.json", function(error, graph) { // THIS IS USED TO LOAD THE JSON FILE, NOT USED WHEN USING OBJECT AS THE SOURCE DATA
+// d3.json(responseFromServer, function(error, graph) {
     // remap as per:https://stackoverflow.com/questions/14629853/json-representation-for-d3-force-directed-networks
     // this section allows the use of named tagets
     var nodeMap = {};
+    graph = responseFromServer
+
     graph.nodes.forEach(function(x) { nodeMap[x.ID] = x; }); // change x.node to x.name if using names as targets
     graph.links = graph.links.map(function(x) {
         return {
@@ -180,7 +191,8 @@ d3.json("data/gov-agencies.json", function(error, graph) {
         // addClickImage(d)
         // highlightNodeLinks(d)
         currentNode = d;
-        modalData();
+        // modalData();
+        modalStar();
         displayClickTooltip(d)
     }
 
@@ -273,7 +285,7 @@ d3.json("data/gov-agencies.json", function(error, graph) {
 
     }
 
-});
+// });  // THIS IS USED TO LOAD THE JSON FILE, NOT USED WHEN USING OBJECT AS THE SOURCE DATA
 
 
 function changeHorizontal(d) {
