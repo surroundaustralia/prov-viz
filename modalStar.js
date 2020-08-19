@@ -1,9 +1,7 @@
 function modalStar(){
     // select modal and set settings
     document.getElementById("modalContent").innerHTML = "";
-
     var modal = document.getElementById("myModal")
-
     window.onclick = function(event) {
         if (event.target == modal) {
             modal.style.display = "none"
@@ -53,7 +51,6 @@ function modalStar(){
     width = 1400 - marginTree.left - marginTree.right,
     height = 600 - marginTree.top - marginTree.bottom;
 
-
     var simulation = d3.forceSimulation()
     .force("link", d3.forceLink().id(function(d) { return d.Name; }))
     .force("charge", d3.forceManyBody().strength(-20))
@@ -69,7 +66,6 @@ function modalStar(){
 
     //arrow head marker 
     // build the arrow.
-
     svgTree.append("svgTree:defs").selectAll("marker")
     .data(["start"]) // Different link/path types can be defined here
     .enter().append("svgStar:marker") // This section adds in the arrows
@@ -83,7 +79,7 @@ function modalStar(){
     .append("svgTree:path")
     .attr("d", "M0,-5L10,0L0,5");
 
-
+    //set links
     var link = svgTree.append("g")
     .attr("class", "links")
     .selectAll("line")
@@ -91,24 +87,26 @@ function modalStar(){
     .enter().append("line")
     .attr("stroke-width", "1")
 
-
+    //filter links for derived from
     link.filter(function(d){
-        console.log(d.linkType)
         return d.linkType == "derived from"
     })
     .attr("marker-end", "url(#start)");
 
+    //filter links for derives too
     link.filter(function(d){
         return d.linkType == "derives to"
     })
     .attr("marker-start", "url(#start)");
 
+    //append nodes
     var node = svgTree.append("g")
     .attr("class", "nodes")
     .selectAll("g")
     .data(propertiesNodes)
     .enter().append("g")
 
+    // add shapes for nodes
     var circles = node.append("circle")
     .attr("r", 15)
     .style('fill', function(d){
@@ -118,15 +116,14 @@ function modalStar(){
             return d.node.color
         }
         return "black"
-
     })
+    .style("stroke", function(d) { return d3.rgb(d.color).darker(2); })
     .call(d3.drag()
         .on("start", dragstarted)
         .on("drag", dragged)
-        .on("end", dragended))
-    .style("stroke", function(d) { return d3.rgb(d.color).darker(2); });
+        .on("end", dragended));
 
-
+    // add floating text with node name
     var lables = node.append("text")
         .text(function(d) {
             return d.Name;
@@ -134,9 +131,11 @@ function modalStar(){
         .attr('x', 6)
         .attr('y', -15);
 
+    //adds mouseover title
     node.append("title")
         .text(function(d) { return d.Name; });
 
+    
     simulation
         .nodes(propertiesNodes)
         .on("tick", ticked);
@@ -144,34 +143,90 @@ function modalStar(){
     simulation.force("link")
         .links(propertiesLinks);
 
-        function ticked() {
-            link
-                .attr("x1", function(d) { return d.source.x; })
-                .attr("y1", function(d) { return d.source.y; })
-                .attr("x2", function(d) { return d.target.x; })
-                .attr("y2", function(d) { return d.target.y; });
+
+    // create legend
+    svgTree.append("text")
+        .attr("x", 1400 - marginTree.right - 250)
+        .attr("y", 50)
+        .text("Legend")
+        .style("font-size", "30px")
+
+
+    var propertyNodeSet = new Set();
+    for (x in propertiesNodes){
+        // if either a source link, source, or target link, then must be a node
+        if((propertiesNodes[x].propertyType == "source") 
+        || (propertiesNodes[x].propertyType == "sourceLinks") 
+        || (propertiesNodes[x].propertyType == "targetLinks")){
+            propertyNodeSet.add(propertiesNodes[x].node.prov_class)
+        }
+    }
+
+    var index = 0;
+    // uses arraynodes from diagramKeyDiv.js
+    for (x in arrayNodes){
+        if (propertyNodeSet.has(arrayNodes[x].name)){
+            console.log(arrayNodes[x])
+            drawCircle(arrayNodes[x].name, arrayNodes[x].node_color, index)
+            index++;
+        }
+    }
+    drawCircle("Property", "black", index)
+
+
+
+
+    // helper functions for force diagram
+    function ticked() {
+        link
+            .attr("x1", function(d) { return d.source.x; })
+            .attr("y1", function(d) { return d.source.y; })
+            .attr("x2", function(d) { return d.target.x; })
+            .attr("y2", function(d) { return d.target.y; });
     
-            node
-                .attr("transform", function(d) {
-                    return "translate(" + d.x + "," + d.y + ")";
-                })
+        node
+            .attr("transform", function(d) {
+                return "translate(" + d.x + "," + d.y + ")";
+            })
         }
 
-        function dragstarted(d) {
-            if (!d3.event.active) simulation.alphaTarget(0.3).restart();
-            d.fx = d.x;
-            d.fy = d.y;
+    function dragstarted(d) {
+        if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+        d.fx = d.x;
+        d.fy = d.y;
+    }
+        
+    function dragged(d) {
+        d.fx = d3.event.x;
+        d.fy = d3.event.y;
         }
         
-        function dragged(d) {
-            d.fx = d3.event.x;
-            d.fy = d3.event.y;
-        }
-        
-        function dragended(d) {
-            if (!d3.event.active) simulation.alphaTarget(0);
-            d.fx = null;
-            d.fy = null;
-        }
+    function dragended(d) {
+        if (!d3.event.active) simulation.alphaTarget(0);
+        d.fx = null;
+         d.fy = null;
+    }
+
+    //drawing functions
+    function drawCircle(name, color, index) {
+
+        svgTree.append("circle")
+            .attr("cx", 1400 - marginTree.right - 250)
+            .attr("cy", 100 + 70*index)
+            .attr("r", 15)
+            .attr("id", "linkLegend")
+            .style("fill", color)
+            .style("stroke", "black")
+    
+        svgTree.append("text")
+            .attr("x", 1400 - marginTree.right - 230)
+            .attr("y", 100 + 70*index)
+            .text(name)
+            .attr("id", "linkLegend")
+            .style("font-size", "15px")
+            .attr("alignment-baseline", "middle")
+    
+    }
+
 
 }
