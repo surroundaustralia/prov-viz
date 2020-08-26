@@ -58,6 +58,7 @@ var simulation = d3.forceSimulation()
         responseFromServer = json
     })
 createForce(responseFromServer)
+
 function createForce(responseFromServer){
     graph = responseFromServer
     var link = svgStar.append("g")

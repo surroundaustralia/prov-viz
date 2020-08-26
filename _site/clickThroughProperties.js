@@ -20,7 +20,5 @@ window.onclick = function(event) {
 
 
 function clickThroughFunction() {
-    console.log(currentNode)
     modal.style.display = "block";
-
 }

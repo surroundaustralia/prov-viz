@@ -33,7 +33,7 @@ for (x in dataUsed.nodes) {
     classNodeSet.add(dataUsed.nodes[x].prov_class)
 }
 
-// create node legned
+// create node legend
 var index = 0;
 for (x in arrayNodes) {
     if (classNodeSet.has(arrayNodes[x].name)) {
